@@ -9,7 +9,7 @@ This repository contains:
 - Example prompts and usage instructions
 
 The model weights are hosted on Hugging Face:
-👉 [https://huggingface.co/anon-user/MINGLE-1.0](https://huggingface.co/anon-user/MINGLE-1.0)
+👉 [https://huggingface.co/AI-Anon/MINGLE-1.0](https://huggingface.co/AI-Anon/MINGLE-1.0)
 
 ## 2 The 100k street-level grouping sets
 
