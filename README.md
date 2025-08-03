@@ -11,27 +11,34 @@ This repository contains:
 The model weights are hosted on Hugging Face:
 👉 [https://huggingface.co/AI-Anon/MINGLE-1.0](https://huggingface.co/AI-Anon/MINGLE-1.0)
 
+📖 **Usage Instructions**: Detailed step-by-step instructions on how to use this model are provided in the Jupyter notebook `ipynb/pairwise_grouping.ipynb`.
+
 ## 2 The 100k Street-Level Grouping Dataset
 
 We release a large-scale metadata set of 100,000 street-view images, each annotated with both individual people and social group regions. These annotations were generated using the full MINGLE pipeline and combine manual labels with validated pipeline predictions.
 
 Note:
 We do not release any image files due to copyright and privacy concerns. Instead, we provide:
-	•	Metadata for each image, including platform, location info, and viewing angles
-	•	Scripts for downloading and re-stitching the original images from public APIs (e.g., Google Street View, Apple Lookaround, Mapillary)
+	- Metadata for each image, including platform, location info, and viewing angles
+	- Scripts for downloading and re-stitching the original images from public APIs (e.g., Google Street View, Apple Lookaround, Mapillary)
 
 ⸻
 
 📦 Contents of the CSV
 
 Each row in the CSV corresponds to one annotated image and includes:
-	•	image_id: Unique image identifier
-	•	platform: One of {apple, google, bing, mapillary}
-	•	location_info: Fields such as pano ID, latitude, longitude, heading, pitch, zoom, etc.
-	•	person_boxes: Bounding boxes for detected individuals in [x1,y1,x2,y2] format
-	•	group_boxes: Bounding boxes for socially affiliated groups (≥2 people)
-	•	group_assignments: A mapping from each person to a group ID
-	•	metadata: Number of people, number of groups, average group size, etc.
+	- image_id: Unique image identifier
+	- group id: the id of the detected group in this picture
+	- cnt_people: the number of people detected in this image
+	- cnt_group: the number of the groups detected in this image
+	- box_detected_person: the bounding boxes of detected person
+	- group_box: the bounding boxes of detected groups
+	- box_within_group: the person boxes within the group boxes
+	- cnt_person_within_group: the number of persons in the groups
+	- person_box_is_unreal_person: this is the check of whether the person is an unreal person
+	- has unreal: whether there is any unreal person (but all have been removed already)
+	- source: One of {apple, google, bing, mapillary}
+	- id: the id of that pano in that source
 
 These fields enable researchers to recreate the full image context and re-align group regions on top of the stitched views.
 
@@ -40,10 +47,10 @@ These fields enable researchers to recreate the full image context and re-align 
 🌐 Image Source Platforms
 
 The 100k images were originally collected from:
-	•	Apple Lookaround (60%)
-	•	Google Street View (15%)
-	•	Bing Streetside (15%)
-	•	Mapillary (10%)
+	- Apple Lookaround (60%)
+	- Google Street View (15%)
+	- Bing Streetside (15%)
+	- Mapillary (10%)
 
 Only lateral views (left/right) were used to better capture pedestrian interactions.
 
