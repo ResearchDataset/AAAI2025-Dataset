@@ -27,18 +27,18 @@ We do not release any image files due to copyright and privacy concerns. Instead
 📦 Contents of the CSV
 
 Each row in the CSV corresponds to one annotated image and includes:
-	- image_id: Unique image identifier
-	- group id: the id of the detected group in this picture
-	- cnt_people: the number of people detected in this image
-	- cnt_group: the number of the groups detected in this image
-	- box_detected_person: the bounding boxes of detected person
-	- group_box: the bounding boxes of detected groups
-	- box_within_group: the person boxes within the group boxes
-	- cnt_person_within_group: the number of persons in the groups
-	- person_box_is_unreal_person: this is the check of whether the person is an unreal person
-	- has unreal: whether there is any unreal person (but all have been removed already)
-	- source: One of {apple, google, bing, mapillary}
-	- id: the id of that pano in that source
+- image_id: Unique image identifier
+- group id: the id of the detected group in this picture
+- cnt_people: the number of people detected in this image
+- cnt_group: the number of the groups detected in this image
+- box_detected_person: the bounding boxes of detected person
+- group_box: the bounding boxes of detected groups
+- box_within_group: the person boxes within the group boxes
+- cnt_person_within_group: the number of persons in the groups
+- person_box_is_unreal_person: this is the check of whether the person is an unreal person
+- has unreal: whether there is any unreal person (but all have been removed already)
+- source: One of {apple, google, bing, mapillary}
+- id: the id of that pano in that source
 
 These fields enable researchers to recreate the full image context and re-align group regions on top of the stitched views.
 
@@ -47,10 +47,10 @@ These fields enable researchers to recreate the full image context and re-align 
 🌐 Image Source Platforms
 
 The 100k images were originally collected from:
-	- Apple Lookaround (60%)
-	- Google Street View (15%)
-	- Bing Streetside (15%)
-	- Mapillary (10%)
+- Apple Lookaround (60%)
+- Google Street View (15%)
+- Bing Streetside (15%)
+- Mapillary (10%)
 
 Only lateral views (left/right) were used to better capture pedestrian interactions.
 
